@@ -23,7 +23,11 @@
   "dependencies": {
     "@toruslabs/starkware-crypto": "^1.0.0",
     "axios": "^0.24.0",
+    "dotenv": "^16.3.1",
     "hardhat": "2.9.3",
-    "starknet": "3.10.0"
+    "starknet": "^5.25.0"
+  },
+  "volta": {
+    "node": "16.20.2"
   }
 }

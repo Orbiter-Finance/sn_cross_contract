@@ -14,3 +14,5 @@ starknet-artifacts
 
 #Cairo venv
 cairo_venv
+
+.env
