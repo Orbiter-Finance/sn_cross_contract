@@ -1,10 +1,11 @@
 import {
-    Account,
-    CallData,
-    Contract,
-    RpcProvider,
-    num,
-    uint256
+  Account,
+  CallData,
+  Contract,
+  RpcProvider,
+  num,
+  shortString,
+  uint256,
 } from "starknet";
 import obSourceAbi from "../starknet-artifacts/contracts/ob_source.cairo/ob_source_abi.json";
 
@@ -74,9 +75,13 @@ async function main() {
       token,
       "0x029a5b3ed839b9d190c4e5a2108572b7389c49376231c068244f2d9fda1ac4a2",
       amount,
-      "0x1234"
+      ["0x1234", "0x5678"]
     );
   console.log("transferERC20Hash:", transferERC20Hash);
+
+  const receipt = await rpcProvider.waitForTransaction(transferERC20Hash);
+
+  console.log("receipt.events:", receipt.events);
 }
 
 main()
